@@ -55,17 +55,17 @@ TabPanelの機能紹介と、Vim本体への取りこみ。この機能を入れ
 
 知らないプラグインも多くて、3ヶ月のインプットとしてはすごいなと感じた。
 
-セッションとは関連性が薄いですが、昨日Omarchyを入れて[lazy.nvim](https://github.com/folke/lazy.nvim)がプリセットで入っていて、補完のカスタマイズが良くて自分でメンテが追いつかないならこういうのを頼っていもいいなと思っている今日この頃でした。
+セッションとは関連性が薄いですが、昨日Omarchyを入れて[lazy.nvim](https://github.com/folke/lazy.nvim)がプリセットで入っていて、補完のカスタマイズが良くて自分でメンテが追いつかないならこういうのを頼ってもいいなと思っている今日この頃でした。
 
 ### Getting Started with *your own* Neovim feat. mini.nvim
 
-mini.nvim 40以上のモジュールがプリセットされているプラグイン。プラグインがある世界でのNeovimの機能概念が分かる良いプラグインだと感じた。Vimはまず始める段階から、プラグインをたくさん使ってIDEみたいにするまでに挫折ポイントが多いと感じていたので、mini.nvimレイヤーはとても良いと思った。。自分の設定はにわか知識で継ぎ足しで文字通り秘伝のタレになっているので、プリセットの方が自作の設定より、効率的で概念を理解しやすいので、自分の設定をまっさらにしてmini.nvimからやり直したい思った。
+mini.nvim 40以上のモジュールがプリセットされているプラグイン。プラグインがある世界でのNeovimの機能概念が分かる良いプラグインだと感じた。Vimはまず始める段階から、プラグインをたくさん使ってIDEみたいにするまでに挫折ポイントが多いと感じていたので、mini.nvimレイヤーはとても良いと思った。。自分の設定はにわか知識で継ぎ足しで文字通り秘伝のタレになっているので、プリセットの方が自作の設定より、効率的で概念を理解しやすいので、自分の設定をまっさらにしてmini.nvimからやり直したいと思った。
 
 ### And Yet, Vim Survived: Thinking and Seeing in the Age of Code You Don't Write
 
 Vimをコードを読むためのツールとして使う際のTipsのお話。
 
-コンピューターがコードを書いて、人間がチェックする時代。今は沢山早く書くより、より深く理解することが大事。コードの追いかけ方としてWhere(流れ, Flow) What(構造, Structure) Why(理由, Resoning)が話していた。
+コンピューターがコードを書いて、人間がチェックする時代。今は沢山早く書くより、より深く理解することが大事。コードの追いかけ方としてWhere(流れ, Flow) What(構造, Structure) Why(理由, Reasoning)が話していた。
 
 Where(Flow)では以下はターミナルでエラー発生した場合、その場所にジャンプ、戻る方法で`lambdalisue/vim-file-protocol` `lambdalisue/vim-gf-improved` `Backudankun/BackAndForward.nvim`を使う。fzf(`fall.vim`)を使って、ピンポイントでジャンプして、戻る方法など。
 
@@ -83,7 +83,7 @@ Whyでは、Ginの紹介。`:GinStatus` `:GinLog` `:GinBlame` `:GinDiff` `:GinLo
 
 Tree-sitterの話。
 
-urlを認識してくれたり、マークダウンのように他の言語が混ざっていても再起的にパースできる。`query` `parser` `tree-traversal` `callback`の機能に関する話、プラグインとして`vim-matchup` `nvim-treesitter-context` `nvim_context_vt` の紹介があった。
+urlを認識してくれたり、マークダウンのように他の言語が混ざっていても再帰的にパースできる。`query` `parser` `tree-traversal` `callback`の機能に関する話、プラグインとして`vim-matchup` `nvim-treesitter-context` `nvim_context_vt` の紹介があった。
 
 スピーカーの方が実装した[treemonkey.nvim](https://blog.atusy.net/2023/12/27/treemonkey-nvim/)はTree-sitterでパースしてセマンティクスにあった選択ができるようになるみたい👀 すごい。[treesitter-ls](https://github.com/atusy/treesitter-ls)は複数言語にわたる正確な解析ができるLSPの紹介もありました！構文情報が取れるので、色んな活用ができそう？ASTとは違うレベルなのかな。とりあえずここら辺必要になってみたら試していきたいなと思いました！
 

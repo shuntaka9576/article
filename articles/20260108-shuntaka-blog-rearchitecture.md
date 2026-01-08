@@ -236,7 +236,7 @@ previewブランチとmainブランチの2本運用で、previewに開発用の�
 
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1767879224/blog/20260108-shuntaka-blog-rearchitecture/uyaumt0kdkzcwm4rlx8t.png)
 
-このブログは、[ソースコード](https://github.com/shuntaka9576/shuntaka-dev)と[設計ドキュメント](https://shuntaka9576.github.io/shuntaka-dev/)があるので誰でも再現可能です。公開してないコードはありません。RustとAWSでブログを作ってみたい方におすすめです。
+ここまで解説した内容は[ソースコード](https://github.com/shuntaka9576/shuntaka-dev)と[設計ドキュメント](https://shuntaka9576.github.io/shuntaka-dev/)があるので誰でも再現可能です。公開してないコードはありません。RustとAWSでブログを作ってみたい方におすすめです。
 
 5日ほど運用していますが、マルチレポ時代と比べると断然運用しやすくなりました。以前はRenovateも入れてなかったのでほぼ放置状態でした。現在はRenovateからのPRで、GitHub Notificationみてぽちぽちするのが楽しいですね。いずれ飽きますが、しばらく楽しめそうです。
 

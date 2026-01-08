@@ -16,6 +16,8 @@ publish: true
 新構成
 ![2026年shuntaka.dev構成](https://shuntaka9576.github.io/shuntaka-dev/_images/architecture.drawio.png)
 
+※ GitHub AppsでリポジトリとDBの同期及び、CloudinaryでOGPイメージ生成は続投
+
 主な変更点は以下の通りです。
 
 |要素|変更前|変更後|
@@ -143,7 +145,7 @@ Aurora DSQLにはまともなマイグレーションツールはないのでdsq
 
 フロントエンドは元々Next.jsなのでマイグレーションする必要はないのですが、2020年時点なのでPages RouterだったのとCSSのSassとmarkdownパーサーを別リポジトリでnpm経由で管理しており、やりすぎな部分があったので一旦CSSはNext.jsへ、markdownパーサーは後述のRustバックエンドへ移植しました。
 
-レガシーソースの2つ(shuntaka-dev-frontend, shuntaka-dev-packages)をコンテキストに過去Figmaで自分が設計した配色(ダークモード、ライトモード)通り、Claude Codeに参照してもらい同じデザインで移植できました。全て[global.css](https://github.com/shuntaka9576/shuntaka-dev/blob/preview/apps/web/src/app/globals.css)に定義しているのは草ですが、過去の自分の設計通り移植がされ、別技術スタックを試すためのコンテキストとして使うにはまとまりがあって逆に良いかなと思っています。
+レガシーソースの2つ(shuntaka-dev-frontend, shuntaka-dev-packages)をコンテキストに過去Figmaで自分が設計した配色(ダークモード、ライトモード)通り、Claude Codeに参照してもらい同じデザインで移植できました。全て[global.css](https://github.com/shuntaka9576/shuntaka-dev/blob/preview/apps/web/src/app/globals.css)に定義しているのは草ですが、過去の自分の設計通り移植がされ、将来別技術スタックへ移行することを前提とした、AIへのコンテキストとして使うにはまとまりがあって逆に良いかなと思っています。
 
 ```
 └── .legacy
@@ -183,13 +185,13 @@ Swaggerは[api.shuntaka.dev/swagger](https://api.shuntaka.dev/swagger/)で見え
 
 ![image](https://res.cloudinary.com/dkerzyk09/image/upload/v1767876999/blog/20260108-shuntaka-blog-rearchitecture/kh4fkbwhhsbimrifs9we.png)
 
-旧構成ではクライアントからGitHub Appsをインストールしたり謎に機能をつけていましたが、断捨離して利便性を失わない最小構成を考えた結果この3本になりました。
+旧構成ではクライアントからGitHub Appsをインストールしたり謎に機能をつけていましたが、断捨離して利便性を失わない最小構成を考えた結果この3本になりました。GitHub AppsでリポジトリとAurora DSQLを同期して、ISRは大正義です。
 
 ![2026年shuntaka.dev構成](https://shuntaka9576.github.io/shuntaka-dev/_images/architecture.drawio.png)
 
-Amazon APIGatewayは去年末機能アップデートがあり、ストリーミングは15分可能になったので、逐次のチャットボットなんかも作ろうと思えば出来ます。
+Amazon APIGatewayは去年末機能アップデートがあり、ストリーミングは15分可能になったので、逐次のストリームのチャットボットなんかも作ろうと思えばサーバーレスで出来ます。
 
-マークダウンのパースはRust側で実施しています。クライアント側のCSSに合うようにclassタグをつけています。実装は[ここら辺](https://github.com/shuntaka9576/shuntaka-dev/tree/preview/apps/blog-api/markdown)です。多分Vibe味があります。改善します。すいません。。Claude Codeがsyntectを使って書き出して、tree-sitterがいいんじゃないかなーと思ったのですが、動きが不穏だったのでそちらは試しませんでした。。
+マークダウンのパースはRust側で実施しています。クライアント側のCSSに合うようにclassタグをつけています。実装は[ここら辺](https://github.com/shuntaka9576/shuntaka-dev/tree/preview/apps/blog-api/markdown)です。多分Vibe味があります。改善します。すいません。。Claude Codeがsyntectを使って書き出して、tree-sitterがいいんじゃないかなーと思ったのですが、Claude Codeに書かせたら動きが不穏だったのでそちらは試しませんでした。。
 
 Aurora DSQLはクエリビルダのsqlxで実行しています。
 
@@ -201,7 +203,7 @@ axumのWebサーバーのコンパイルとコンテナイメージ作成をx86�
 
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1767877666/blog/20260108-shuntaka-blog-rearchitecture/pwfmnbotfb5rhqk8ahis.jpg)
 
-結果タイトルの通り、Mac miniをGitHub Self-hosted Runnerとして動かしてビルドすることにしました。結果としてかなり改善しました。ARMに加えてRustのコンパイルが効いているかどうかは分かりませんが、少なくともホストは同じなのでコンテナのキャッシュはかなり効いてるっぽくソースコードに差分があった場合でも2分程度デプロイが完了するケースがありました。現在はpublicリポジトリなのでARM Runnerを使ってもいいのですが、コンテナのキャッシュは効かないのでこのままでいいかなと思っています。もちろんキャッシュできますが、ダウンロードと解凍で大して早くならない印象を持っています。
+結果タイトルの通り、Mac miniをGitHub Self-hosted Runnerとして動かしてビルドすることにしました。結果としてかなり改善しました。ARMに加えてRustのコンパイル時のキャッシュ効いている(?)、少なくともホストは同じなのでコンテナのキャッシュはかなり効いてるっぽくソースコードに差分があった場合でも2分程度デプロイが完了するケースがありました。現在はpublicリポジトリなのでARM Runnerを使ってもいいのですが、コンテナのキャッシュは効かないのでこのままでいいかなと思っています。もちろんキャッシュできますが、ダウンロードと解凍で大して早くならない印象を持っています。
 
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1767878052/blog/20260108-shuntaka-blog-rearchitecture/ynarziabtq6bd2hsbjkq.png)
 
@@ -212,7 +214,7 @@ axumのWebサーバーのコンパイルとコンテナイメージ作成をx86�
 
 ### Renovate
 
-マルチレポ時代に比べるとモノレポ × Renovateで幸せになりました。設定は[こちら](https://github.com/shuntaka9576/shuntaka-dev/blob/preview/renovate.json)です。セキュリティ対策としてminimumReleaseAge=21daysとGitHub Actionsはハッシュでpinしています。
+マルチレポ時代に比べるとモノレポ × Renovateで幸せになりました。設定は[こちら](https://github.com/shuntaka9576/shuntaka-dev/blob/preview/renovate.json)です。セキュリティ対策としてminimumReleaseAge=21daysを設定しています。GitHub Actionsはactionのバージョンをハッシュでpinしていても、[こんな感じで](https://github.com/shuntaka9576/shuntaka-dev/pull/5)自動更新かけてくれるので便利です。
 
 ### lefthook
 
@@ -241,5 +243,7 @@ previewブランチとmainブランチの2本運用で、previewに開発用の�
 5日ほど運用していますが、マルチレポ時代と比べると断然運用しやすくなりました。以前はRenovateも入れてなかったのでほぼ放置状態でした。現在はRenovateからのPRで、GitHub Notificationみてぽちぽちするのが楽しいですね。いずれ飽きますが、しばらく楽しめそうです。
 
 AIコーディングエージェントのおかげで隙間時間でパーサーの拡張もしやすくなったので、今まで出来なかった拡張もどんどんしていきたいなと思います！1ヶ月くらい経ったらDSQLのメトリクスなども公開していこうかなと思います！
+
+結果的にこの移植作業は、大体丸1日程度で出来て、Claude Code様様でした。もちろんレガシーコードという完璧なコンテキストがあってこそではありますが。。REST API側も移植に必要な機能として3つのAPIエンドポイントに絞れたのも大きかったです！機能を断捨離して、別技術スタックでAI補助しつつマイグレーションするのは業務でも定番になりそうですね！
 
 それでは今日はこの辺で！

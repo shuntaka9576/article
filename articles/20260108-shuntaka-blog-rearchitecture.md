@@ -59,7 +59,6 @@ GitHub ActionsからAWSへデプロイするためセキュリティ的にもあ
 以下の画像のように、権限がない状態でpublicリポジトリのGitHub Actions結果を見ると、アコーディオンがなくログ内容が展開されないようになっています。
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1767870572/blog/20260108-shuntaka-blog-rearchitecture/qh85qrza9pzivhfbtiom.png)
 
-
 ## 新構成
 
 ソースコードは[github.com/shuntaka9576/shuntaka-dev](https://github.com/shuntaka9576/shuntaka-dev)です。

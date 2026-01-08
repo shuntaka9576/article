@@ -3,7 +3,7 @@ title: "Rust(axum) on Lambda × Aurora DSQL × Next.js on Vercelで個人ブロ�
 type: "tech"
 category: []
 description: "2020年にNode.js on Lambda × DynamoDB × Next.js on Vercelで運用していたブログのアーキテクチャを刷新しました！"
-publish: false
+publish: true
 ---
 
 ## はじめに

@@ -166,7 +166,9 @@ GitHub AppsでGitHubのリポジトリとAurora DSQLを同期しているので�
 
 ![2020年shuntaka.dev構成](https://res.cloudinary.com/dkerzyk09/image/upload/v1615111924/blog/01ezsr2jdx19bg00pgwt1rnsk6/hqdqjtntcjed43d0nnjp.webp)
 
-新構成は対照的にLambdalithという、Amazon APIGatewayに直で1つのLambdaが呼ばれる構成です。RustのWebサーバーFWのaxumのコンテナLambdaがいる状態です。
+一方で新構成では対照的にLambdalithという、Amazon APIGatewayに直で1つのLambdaが呼ばれる構成です。RustのWebサーバーFWのaxumのコンテナLambdaがいる状態です。
+
+![2026年shuntaka.dev構成](https://shuntaka9576.github.io/shuntaka-dev/_images/architecture.drawio.png)
 
 図のLWAは、Lambda Web Adapterの略で、Dockerfileに1行足せばLambda特有のリクエスト/レスポンスを変換、中継してくれるので、Lambdaのことを意識せずかつローカルで動作するaxumをそのままデプロイすることが出来ます。
 
@@ -215,7 +217,7 @@ axumのWebサーバーのコンパイルとコンテナイメージ作成をx86�
 
 ### lefthook
 
-push前に実行しています。git hook系は苦手だったのですが、turboと合わせたり昨今のClaude Codeとの相性は抜群で便利です。
+push前に実行しています。git hook系は2重チェック感があり苦手だったのですが、turboと合わることでストレスが激減してメリットが増えます。昨今のClaude Codeとの相性は抜群で便利です。
 
 ### Vercel
 

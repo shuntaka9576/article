@@ -29,7 +29,9 @@ publish: true
 
 ## 旧構成のブログを作った経緯
 
-2020年に旧構成でブログを作りました。当時個人開発者のcatnoseさんがZennをローンチし、その影響でVercelとNext.jsのPages Router、ISRに興味を持ち、個人ブログを作りました。詳しい記事は[当時のこちらの記事](https://shuntaka.dev/shuntaka/articles/01f07hctzhjcwtdq4h6ew9stk8)を読んでいただけるとわかります。
+2020年に旧構成でブログを作りました。当時個人開発者のcatnoseさんがZennをローンチし、その影響でVercelとNext.jsのPages Router、ISRに興味を持ち、個人ブログを作りました。詳しい記事は当時の以下の記事を読んでいただけるとわかります。
+
+https://shuntaka.dev/shuntaka/articles/01f07hctzhjcwtdq4h6ew9stk8
 
 Zennはローンチ当初フロントエンドはNext.js on Vercel、サーバサイドはRails on App Engineという構成だったと記憶しています。当時サーバーレスAPIをよく作っていたのとコストが安いので、LambdaとDynamoDBでサーバーサイドを作り、Next.js on Vercelでフロントエンドを作りました。LambdaコールドスタートとISRは相性が良いと思ったというのも理由の1つです。
 
@@ -48,7 +50,9 @@ Zennはローンチ当初フロントエンドはNext.js on Vercel、サーバ�
 
 pnpmやturbo、renovateなども全てに設定する必要があるのも個人で開発するには手間が多いです。
 
-※ 余談ですが、パーサーとCSSをpublicにしているのは、Zennの影響です😂 [zenn-editor](https://github.com/zenn-dev/zenn-editor)を参考に同じ構成で遊んでました。これがきっかけで、[些細な貢献](https://github.com/zenn-dev/zenn-editor/pull/528)に繋がりました。
+※ 余談ですが、パーサーとCSSをpublicにしているのは、Zennの影響です😂 [zenn-editor](https://github.com/zenn-dev/zenn-editor)を参考に同じ構成で遊んでました。これがきっかけで、些細な貢献に繋がりました。
+
+https://github.com/zenn-dev/zenn-editor/pull/528
 
 ### プライベートリポジトリ運用
 
@@ -63,7 +67,9 @@ GitHub ActionsからAWSへデプロイするためセキュリティ的にもあ
 
 ## 新構成
 
-ソースコードは[github.com/shuntaka9576/shuntaka-dev](https://github.com/shuntaka9576/shuntaka-dev)です。
+ソースコードは以下です。
+
+https://github.com/shuntaka9576/shuntaka-dev
 
 ディレクトリ構成は以下です。
 

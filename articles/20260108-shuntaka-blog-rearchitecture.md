@@ -213,6 +213,10 @@ axumのWebサーバーのコンパイルとコンテナイメージ作成をx86�
 
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1767878052/blog/20260108-shuntaka-blog-rearchitecture/ynarziabtq6bd2hsbjkq.png)
 
+元ネタのX垂れ流しはこちら
+
+https://x.com/shuntaka_jp/status/2005661760125345896
+
 ### AWS CDK
 
 今回はRoute53含めて全てコード化しました。開発環境、本番環境両方作る構成なので、ドメインは2つ必要です。完全に手動なしでいけるかと言われるとそうではなく、ACMの証明書を発行する処理でCDKがDNS検証が終わるまで進行が止まるのでRoute53のNSレコードをレジストラに設定する必要があります。詳しくは[環境構築手順](https://shuntaka9576.github.io/shuntaka-dev/01_development.html)を見れば環境が作れます。

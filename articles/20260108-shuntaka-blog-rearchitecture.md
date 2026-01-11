@@ -201,6 +201,48 @@ Amazon APIGatewayは去年末機能アップデートがあり、ストリーミ
 
 Aurora DSQLはクエリビルダのsqlxで実行しています。
 
+
+### インフラマイグレーション
+
+旧構成はVercel Pages Router + ISRなので、別にバックエンドが死んだところでキャッシュを返すので細かい移行プランは必要なかった。これすら気づかず自分はエイヤで移行を始めてしまったが。。ただ移行する際に気づいた点を書こうと思う。
+
+同じAWSアカウントで同名のホストゾーンが作成可能なのを利用して、Route53は並列で立てることにした。証明書のDNS検証で新ホストゾーンのNS切り替えが必要になるかと思ったが、おそらく同じドメイン（またはワイルドカード）に対するACM証明書は、同じアカウント内であれば同じCNAME検証値が使われるようで、NS切り替え前に旧Route53経由で証明書が発行された。CDKのデプロイが証明書検証で停止し、NS切り替えの確認が終わるまで終了しないと思っていたらすぐ完了して拍子抜けしたが、そういう理由だったようだ。
+
+![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768168240/blog/20260108-shuntaka-blog-rearchitecture/hq8y2zk3pm5ghhamr556.png)
+
+https://x.com/shuntaka_jp/status/2006615635674153110
+
+これでDNSと証明書はデプロイできた。
+https://github.com/shuntaka9576/shuntaka-dev/blob/22c5ad9cce2f11427c42bc6a15b34029b31f9b8d/iac/aws/bin/cdk.ts#L20-L45
+
+その後APIGateway+Lambdaをデプロイしたが、API Gatewayのカスタムドメインが衝突してデプロイ出来なかった。知っていた。手動で消してもCFn上は残っているっぽく失敗したのでスタックを削除した。
+
+```bash
+p-st-main: creating CloudFormation changeset...
+9:49:05 PM | CREATE_FAILED        | AWS::ApiGateway::DomainName      | BlogAPIRestApiCustomDomain5D494573
+api.shuntaka.dev already exists in stack arn:aws:cloudformation:ap-northeast-1:アカウントID:stack/prd-hozi-dev-backend-api/7a7d1570-49dd-11eb-8fca-0a8e314a11e0
+
+(中略)
+
+❌  p-st-main failed: ToolkitError: The stack named p-st-main failed creation, it may need to be manually deleted from the AWS console: ROLLBACK_COMPLETE: api.shuntaka.dev already exists in stack arn:aws:cloudformation:ap-northeast-1:アカウントID:stack/prd-hozi-dev-backend-api/7a7d1570-49dd-11eb-8fca-0a8e314a11e0
+```
+
+スタック消したあと、サイト(Vercel側)を確認したが、予想通りサイトは死んでなかった。さすがISR。
+
+DBマイグレ後、Vercelデプロイしたがエラーになっていた。sitemapがSSGになっており、前述の通りスタックを消した影響でデプロイ時にapi.shuntaka.devにアクセスできず落ちたという形。ISRでリクエスト都度キャッシュという認識だったのでこれは動作確認が甘かった。後述するがこれは修正した。
+
+![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768168666/blog/20260108-shuntaka-blog-rearchitecture/jwn1rxrigkyexwxdb8uy.png)
+
+やっぱりノリで切り替えるとダメだなぁと思いいつつ、NS切り替えてhealthエンドポイント叩いて切り替え確認。redeploy完了。VercelでデプロイしたAレコードを追加して、Vercelはvercel.appみたいなURLがつくので、それは削除して完了した。
+
+![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768169618/blog/20260108-shuntaka-blog-rearchitecture/bfnc4gzrbzbbalwsvaid.png)
+
+その後sitemapがSSGになっている問題は修正した。
+
+https://github.com/shuntaka9576/shuntaka-dev/commit/d236b9493a0e7013645e9761c28e410eb9786b37
+
+これ以外にも細かいミスはあって、CDK経由でLambdaの環境変数はOS環境変数経由で渡しているのだが、ローカルでデプロイした結果ローカルの.envを見て開発用の値が設定されて、GitHub Actions経由でデプロイに切り替えたりと...まぁ雑すぎた。そもそもなんで先本番環境作っているねん。みたいな。。趣味なので許してくれ。
+
 ## その他採用した技術について
 
 ### GitHub Self-hosted Runner

@@ -59,8 +59,16 @@ publish: true
 (16:50) 移管進行状況が「移管まもなく完了します。」に変化。
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768722680/hgc13h2p8w0nfbwecc2x.png)
 
-
 (17:28) まもなく完了からが長く終わらない。。随時追記予定。。😭😭😭
+
+(18:20) 16時ちょうどにCloudflareのマネコンから移管の承認をして約2時間半弱でムームー側から私へ移管完了通知が来ました。
+![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768728207/t7u539jd0sgux2phqhmx.png)
+
+更新するボタンを押下して、移管費用を決済したら完了です🥳🥳🥳自分はクレカ決済にしているので、おさいぽからクレカに選択切り替えて決済しました。
+
+![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1768728207/osot4rztvxbovwa09zvn.png)
+
+ほぼ作業系は通知来てからすぐ対応したので、14時33分に始めて18時20分に終わったので大体4時間弱で全ての作業が完了しました🎉 1つの目安にしてください！
 
 
 ## さいごに

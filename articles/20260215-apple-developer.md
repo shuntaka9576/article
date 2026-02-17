@@ -52,4 +52,4 @@ https://apps.apple.com/jp/app/apple-developer/id640199958
 
 ![img](https://res.cloudinary.com/dkerzyk09/image/upload/v1771333385/blog/2026-02-15-apple-developer/yhuioohchhbgegeeduvo.png)
 
-Appleさん課金させて戴きありがとうございます！！
+承認は最大48時間みたいです！Appleさん課金させて戴きありがとうございます！！

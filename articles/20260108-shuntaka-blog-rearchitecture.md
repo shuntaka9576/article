@@ -14,7 +14,7 @@ publish: true
 ![2020年shuntaka.dev構成](https://res.cloudinary.com/dkerzyk09/image/upload/v1615111924/blog/01ezsr2jdx19bg00pgwt1rnsk6/hqdqjtntcjed43d0nnjp.webp)
 
 新構成
-![2026年shuntaka.dev構成](https://shuntaka9576.github.io/shuntaka-dev/_images/architecture.drawio.png)
+![2026年shuntaka.dev構成](https://raw.githubusercontent.com/shuntaka9576/shuntaka-dev/23e7f45501eb879b51e87f16efd85f69e4b9c480/docs/source/assets/architecture.drawio.png)
 
 ※ GitHub AppsでリポジトリとDBの同期及び、CloudinaryでOGPイメージ生成は続投
 

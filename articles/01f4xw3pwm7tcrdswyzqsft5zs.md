@@ -1,9 +1,12 @@
 ---
 title: "OpenSSLでJWTの作成、検証ロジックを確認する"
 type: "tech"
-category: []
 description: "OpenSSLを使ってJWTの作成、検証を自前でやってみます"
 publish: true
+tags:
+  - "tech/セキュリティ"
+  - "tech/jwt"
+  - "tech/oauth"
 ---
 
 # はじめに

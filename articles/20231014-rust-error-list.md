@@ -1,9 +1,11 @@
 ---
 title: "Rustのコンパイルエラーまとめ"
 type: "note"
-category: []
 description: "Rust学習中で出会ったコンパイルエラーをまとめます"
 publish: true
+tags:
+  - "tech/rust"
+  - "tech/開発環境"
 ---
 
 # はじめに

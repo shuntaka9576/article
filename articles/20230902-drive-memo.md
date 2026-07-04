@@ -1,9 +1,10 @@
 ---
 title: "過失割合メモ"
 type: "note"
-category: []
 description: ""
 publish: true
+tags:
+  - "misc"
 ---
 
 ## 右直事故

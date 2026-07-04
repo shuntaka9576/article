@@ -1,10 +1,14 @@
 ---
 title: "2022年の振り返り"
 type: "tech"
-category: []
 description: "毎年恒例のやつ書きました"
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1671863811/blog/01gmj0rnrsx2rwsqyfj2m15ymb/h7iflpmgeoq0pms6rjtv.png"
 publish: true
+tags:
+  - "misc/振り返り"
+  - "tech/go"
+  - "tech/neovim"
+  - "tech/登壇"
 ---
 
 # はじめに

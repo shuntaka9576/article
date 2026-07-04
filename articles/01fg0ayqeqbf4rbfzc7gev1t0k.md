@@ -1,9 +1,12 @@
 ---
 title: "ESP-IDFの導入と使い心地を試す"
 type: "tech"
-category: []
 description: "M5Stack Core2のファームをESP32で開発したいので、ESP-IDFを導入した"
 publish: true
+tags:
+  - "tech/iot"
+  - "tech/arduino"
+  - "tech/開発環境"
 ---
 
 # はじめに

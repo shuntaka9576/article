@@ -1,10 +1,14 @@
 ---
 title: "可処分時間で遊ぶ技術の方針"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/rust"
+  - "tech/neovim"
+  - "misc/キャリア"
+  - "tech/nix"
 ---
 
 

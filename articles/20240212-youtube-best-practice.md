@@ -1,9 +1,10 @@
 ---
 title: "Youtubeとの付き合い方"
 type: "note"
-category: []
 description: ""
 publish: true
+tags:
+  - "misc/youtube"
 ---
 
 個人的にYoutubeは趣味の情報、作業しながら消化できるコンテンツとして有用で、適切な距離感で付き合いたかったりする。

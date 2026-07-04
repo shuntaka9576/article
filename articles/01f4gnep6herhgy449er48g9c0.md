@@ -1,9 +1,13 @@
 ---
 title: "AWS IoTで独自CA証明書を使ってMQTT通信を試してみる"
 type: "tech"
-category: []
 description: "AWS IoTで独自CA証明書を使ってMQTT通信を試してみる"
 publish: true
+tags:
+  - "tech/iot"
+  - "tech/aws"
+  - "tech/mqtt"
+  - "tech/セキュリティ"
 ---
 
 # はじめに

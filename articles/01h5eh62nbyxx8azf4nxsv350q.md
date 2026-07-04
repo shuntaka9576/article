@@ -1,10 +1,12 @@
 ---
 title: "リアルテックイベントに参加する際の準備メモ"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/イベント参加"
+  - "misc"
 ---
 
 

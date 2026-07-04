@@ -1,10 +1,12 @@
 ---
 title: "Go Conference 2022 Spring参加レポート"
 type: "tech"
-category: []
 description: "Go Conference 2022 Spring参加レポートです。進行と同時に随時更新していきます。"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/go"
+  - "tech/イベント参加"
 ---
 
 

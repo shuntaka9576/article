@@ -1,10 +1,12 @@
 ---
 title: "今週のきづきメモ(技術編)"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/aws"
+  - "tech/技術メモ"
 ---
 
 ## LLM関連

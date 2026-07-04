@@ -1,7 +1,6 @@
 ---
 title: "iamcco/markdown-preview.nvimのソースリーディング"
 type: "tech"
-category: []
 description: ""
 publish: false
 ---

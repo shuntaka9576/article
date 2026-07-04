@@ -1,9 +1,11 @@
 ---
 title: "もくもくTiDBチューニング(ぱ〜と1)"
 type: "tech"
-category: []
 description: ""
 publish: false
+tags:
+  - "tech/tidb"
+  - "tech/技術メモ"
 ---
 
 ## はじめに

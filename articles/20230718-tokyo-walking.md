@@ -1,10 +1,11 @@
 ---
 title: "東京ミッドタウンは3つある"
 type: "note"
-category: []
 description: "東京散歩する上でメモです"
 thumbnail: ""
 publish: true
+tags:
+  - "misc/散歩"
 ---
 
 

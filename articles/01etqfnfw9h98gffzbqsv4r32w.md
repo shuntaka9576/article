@@ -1,10 +1,14 @@
 ---
 title: "2020年の振り返り"
 type: "tech"
-category: []
 description: "2020年も残すところあと2日となりました！！お世話になった皆様、感謝です！本記事では、2020年の個人活動を軽く振り返ります。"
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1612594581/blog/01etqfnfw9h98gffzbqsv4r32w/daflgl5t40jdtiam4khv.webp"
 publish: true
+tags:
+  - "misc/振り返り"
+  - "tech/neovim"
+  - "tech/next.js"
+  - "tech/go"
 ---
 
 # 作ったツール/サイト

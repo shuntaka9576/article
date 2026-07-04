@@ -1,9 +1,10 @@
 ---
 title: "高速の覚え方"
 type: "note"
-category: []
 description: ""
 publish: true
+tags:
+  - "misc"
 ---
 
 ## 略称一覧

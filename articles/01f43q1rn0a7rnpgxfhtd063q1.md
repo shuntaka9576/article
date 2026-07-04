@@ -1,7 +1,6 @@
 ---
 title: "GitHubCLIのGitHub Actions関連機能を試してみた"
 type: "tech"
-category: []
 description: ""
 publish: false
 ---

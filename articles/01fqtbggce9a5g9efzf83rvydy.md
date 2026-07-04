@@ -1,10 +1,12 @@
 ---
 title: "Figma備忘録"
 type: "note"
-category: []
 description: "Figmaの備忘録を随時更新していきます"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/figma"
+  - "tech/開発環境"
 ---
 
 :::message warning

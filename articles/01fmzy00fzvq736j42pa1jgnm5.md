@@ -1,9 +1,11 @@
 ---
 title: "DeepL APIを試す"
 type: "tech"
-category: []
 description: "DeepL APIを試します"
 publish: true
+tags:
+  - "tech/deepl"
+  - "tech/cli"
 ---
 
 # はじめに

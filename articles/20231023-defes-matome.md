@@ -1,9 +1,12 @@
 ---
 title: "DenoFest簡易レポ"
 type: "tech"
-category: []
 description: "DenoFestに参加しました！"
 publish: true
+tags:
+  - "tech/deno"
+  - "tech/javascript"
+  - "tech/イベント参加"
 ---
 
 ## はじめに

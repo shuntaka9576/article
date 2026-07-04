@@ -1,9 +1,12 @@
 ---
 title: "GitHubとの連携手段(OAuth Apps, GitHub Apps)を整理する"
 type: "tech"
-category: []
 description: "OAuth AppsやGitHub Appsのフローを雑に整理しました"
 publish: true
+tags:
+  - "tech/github"
+  - "tech/oauth"
+  - "tech/typescript"
 ---
 
 # はじめに

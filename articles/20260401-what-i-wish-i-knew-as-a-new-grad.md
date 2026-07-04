@@ -1,7 +1,6 @@
 ---
 title: "現代はカジュアルに作って公開、宣伝するとAI Slop認定を受ける"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: false

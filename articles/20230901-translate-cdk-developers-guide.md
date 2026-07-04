@@ -1,10 +1,12 @@
 ---
 title: "AWS Cloud Development Kit (AWS CDK) v2の翻訳"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/aws/cdk"
+  - "misc/読書"
 ---
 
 # はじめに

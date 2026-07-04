@@ -1,9 +1,12 @@
 ---
 title: "簡単なツールを書くのにgoogle/zxが便利だった話"
 type: "tech"
-category: []
 description: "google/zxが便利だったので、Tipsとか"
 publish: true
+tags:
+  - "tech/typescript"
+  - "tech/github"
+  - "tech/cli"
 ---
 
 # はじめに

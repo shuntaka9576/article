@@ -1,9 +1,12 @@
 ---
 title: "JavaScriptランタイムの違いをまとめる"
 type: "note"
-category: []
 description: ""
 publish: true
+tags:
+  - "tech/javascript"
+  - "tech/node.js"
+  - "tech/deno"
 ---
 
 

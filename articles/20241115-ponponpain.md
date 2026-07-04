@@ -1,10 +1,11 @@
 ---
 title: "胃腸炎になった話"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "misc/健康"
 ---
 
 

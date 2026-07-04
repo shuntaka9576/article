@@ -1,10 +1,13 @@
 ---
 title: "開発生産性可視化まわりのメモ"
 type: "note"
-category: []
 description: "随時更新します"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/開発生産性"
+  - "tech/devops"
+  - "misc/読書"
 ---
 
 :::message

@@ -1,10 +1,14 @@
 ---
 title: "言語ランタイムと並行実行/並列実行"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/rust"
+  - "tech/go"
+  - "tech/node.js"
+  - "tech/技術メモ"
 ---
 
 

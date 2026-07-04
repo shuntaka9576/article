@@ -1,10 +1,14 @@
 ---
 title: "SPAにTwitter OAuth 2.0を組み込む際の雑メモ"
 type: "tech"
-category: []
 description: "SPAにTwitter OAuth2.0を組み込む際の雑メモ"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/oauth"
+  - "tech/cloudflare"
+  - "tech/セキュリティ"
+  - "tech/typescript"
 ---
 
 # はじめに

@@ -1,9 +1,10 @@
 ---
 title: "結婚式参加側準備メモ"
 type: "note"
-category: []
 description: ""
 publish: true
+tags:
+  - "misc"
 ---
 
 

@@ -1,9 +1,11 @@
 ---
 title: "CloudinaryのFreeプランのクレジットが枯渇した話"
 type: "tech"
-category: []
 description: ""
 publish: true
+tags:
+  - "tech/cloudinary"
+  - "tech/aws/s3"
 ---
 
 

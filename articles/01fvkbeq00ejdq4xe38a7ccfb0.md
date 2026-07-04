@@ -1,10 +1,12 @@
 ---
 title: "Headless UIのオプション調査"
 type: "note"
-category: []
 description: "Headless UIのオプション調査"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/react"
+  - "tech/tailwindcss"
 ---
 
 :::message warning

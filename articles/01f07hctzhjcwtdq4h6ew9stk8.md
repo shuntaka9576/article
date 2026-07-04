@@ -1,9 +1,13 @@
 ---
 title: "Next.jsとサーバレスAPIで自分のブログを作った話"
 type: "tech"
-category: []
 description: "昨年から様々なSaaSを活用して、自作のブログを改善しており、本記事では裏側の構成について解説する"
 publish: true
+tags:
+  - "tech/next.js"
+  - "tech/aws/lambda"
+  - "tech/aws/dynamodb"
+  - "tech/github"
 ---
 
 # はじめに

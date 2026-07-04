@@ -1,10 +1,12 @@
 ---
 title: "ziglingsやってみる(随時更新)"
 type: "note"
-category: []
 description: "ziglingsの翻訳、所感を随時更新でつらつらと書きます"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/zig"
+  - "tech/開発環境"
 ---
 
 # はじめに

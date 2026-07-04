@@ -1,9 +1,12 @@
 ---
 title: "lernaでモノレポで管理したパッケージをnpmに公開する際の注意点"
 type: "tech"
-category: []
 description: "lernaのコマンド周りで、少し嵌ったのでメモを書きました！"
 publish: true
+tags:
+  - "tech/typescript"
+  - "tech/npm"
+  - "tech/モノレポ"
 ---
 
 # はじめに

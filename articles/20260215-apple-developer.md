@@ -1,9 +1,12 @@
 ---
 title: "Apple Developer Programへようこそ(¥12800)"
 type: "tech"
-category: []
 description: "57時間57分の物語"
 publish: true
+tags:
+  - "tech/開発環境"
+  - "tech/macos"
+  - "tech/tauri"
 ---
 
 ## はじめに

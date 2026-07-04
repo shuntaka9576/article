@@ -1,10 +1,13 @@
 ---
 title: "tailwindcss入門(随時更新)"
 type: "note"
-category: []
 description: "tailwindcss入門"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/tailwindcss"
+  - "tech/css"
+  - "tech/react"
 ---
 
 :::message warning

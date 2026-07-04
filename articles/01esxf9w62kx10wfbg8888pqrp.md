@@ -1,9 +1,12 @@
 ---
 title: "Next.jsでブログをリニューアルしました！"
 type: "tech"
-category: []
 description: "Next.jsを使ってどのようにブログシステムを構築したのか説明します！"
 publish: true
+tags:
+  - "tech/next.js"
+  - "tech/react"
+  - "tech/aws/dynamodb"
 ---
 
 # はじめに

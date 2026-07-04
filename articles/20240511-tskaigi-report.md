@@ -1,10 +1,12 @@
 ---
 title: "TSKaigi参加レポ"
 type: "tech"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "tech/typescript"
+  - "tech/イベント参加"
 ---
 
 

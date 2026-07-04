@@ -1,10 +1,11 @@
 ---
 title: "入居してからがんばります"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "misc/引っ越し"
 ---
 
 今の家は22年1月から住んでいるので、これを書いているのが25年9月14日なので3年と8ヶ月住んだことになる。

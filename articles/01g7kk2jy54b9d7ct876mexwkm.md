@@ -1,10 +1,14 @@
 ---
 title: "新しいJavaScriptランタイムBunとその開発言語Zigの開発環境を作る"
 type: "tech"
-category: []
 description: "Neovim coc.nvimでLSP設定までわりとサクッとできました"
 thumbnail: ""
 publish: true
+tags:
+  - "tech/neovim"
+  - "tech/zig"
+  - "tech/typescript"
+  - "tech/開発環境"
 ---
 
 # はじめに

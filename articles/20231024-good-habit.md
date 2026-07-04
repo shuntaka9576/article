@@ -1,7 +1,6 @@
 ---
 title: "2023年やってよかった習慣"
 type: "tech"
-category: []
 description: ""
 publish: false
 ---

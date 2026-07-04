@@ -1,7 +1,6 @@
 ---
 title: "久しぶりにGoを書くときにやること(随時更新)"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: false

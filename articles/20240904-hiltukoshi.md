@@ -1,10 +1,11 @@
 ---
 title: "引っ越しメモ"
 type: "note"
-category: []
 description: ""
 thumbnail: ""
 publish: true
+tags:
+  - "misc/引っ越し"
 ---
 
 ## はじめに

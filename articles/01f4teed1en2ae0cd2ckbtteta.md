@@ -1,7 +1,6 @@
 ---
 title: "Step FunctionsでDynamoDBをAthenaでクエリする環境作成を自動化してみた"
 type: "tech"
-category: []
 description: "非公開"
 publish: false
 ---

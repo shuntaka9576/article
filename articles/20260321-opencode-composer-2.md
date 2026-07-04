@@ -1,9 +1,11 @@
 ---
 title: "OpenCodeでComposer 2をCLIで試す"
 type: "tech"
-category: []
 description: "小ネタです"
 publish: true
+tags:
+  - "tech/開発環境"
+  - "tech/技術メモ"
 ---
 
 ## はじめに

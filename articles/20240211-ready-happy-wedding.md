@@ -1,6 +1,5 @@
 ---
 title: "結婚式参加側準備メモ"
-type: "note"
 description: ""
 publish: true
 tags:

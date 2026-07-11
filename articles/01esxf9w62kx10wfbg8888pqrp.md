@@ -1,6 +1,5 @@
 ---
 title: "Next.jsでブログをリニューアルしました！"
-type: "tech"
 description: "Next.jsを使ってどのようにブログシステムを構築したのか説明します！"
 publish: true
 tags:

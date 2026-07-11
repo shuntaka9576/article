@@ -1,6 +1,5 @@
 ---
 title: "簡単なツールを書くのにgoogle/zxが便利だった話"
-type: "tech"
 description: "google/zxが便利だったので、Tipsとか"
 publish: true
 tags:

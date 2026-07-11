@@ -1,6 +1,5 @@
 ---
 title: "Youtubeとの付き合い方"
-type: "note"
 description: ""
 publish: true
 tags:

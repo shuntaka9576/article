@@ -1,6 +1,5 @@
 ---
 title: "VimConf 2025 Smallに参加しました！"
-type: "tech"
 description: "VimConf 2025 Small参加&簡易レポです"
 publish: true
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1762071546/blog/vim-conf-2025/xsrcqgemtauiuor6hujm.png"

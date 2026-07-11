@@ -1,6 +1,5 @@
 ---
 title: "DeepL APIを試す"
-type: "tech"
 description: "DeepL APIを試します"
 publish: true
 tags:

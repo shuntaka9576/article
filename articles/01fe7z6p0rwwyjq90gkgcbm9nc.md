@@ -1,6 +1,5 @@
 ---
 title: "メモ的な記事を公開するカテゴリです"
-type: "note"
 description: ""
 publish: true
 tags:

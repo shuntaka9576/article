@@ -1,6 +1,5 @@
 ---
 title: "Cloudflare Registrarからムームーへドメイン移管してみる"
-type: "tech"
 description: "Cloudflare Registrarへ移管するパターンはよくありそう。今回は逆です。Cloudflareはfreeだとネームサーバー設定の制約があるのでムームーに移管しました"
 publish: true
 tags:

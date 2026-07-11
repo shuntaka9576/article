@@ -1,6 +1,5 @@
 ---
 title: "TSKaigi参加レポ"
-type: "tech"
 description: ""
 thumbnail: ""
 publish: true

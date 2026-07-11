@@ -1,8 +1,9 @@
 ---
 title: "2023年やってよかった習慣"
-type: "misc"
 description: ""
 publish: false
+tags:
+  - "misc"
 ---
 
 

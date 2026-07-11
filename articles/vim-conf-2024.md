@@ -1,6 +1,5 @@
 ---
 title: "VimConf 2024に参加しました！"
-type: "tech"
 description: "VimConf 2024参加&簡易レポです"
 publish: true
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1732408198/blog/vim-conf-2024/jib55eh765wdihuspot2.png"

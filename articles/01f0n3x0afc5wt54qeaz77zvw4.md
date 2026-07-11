@@ -1,6 +1,5 @@
 ---
 title: "Vim/Neovimプラグイン開発サイクルをまとめてみる"
-type: "tech"
 description: "denops.vimでプラグイン開発するにあたり、初心者なりに開発サイクルを考えてみました。"
 publish: true
 tags:

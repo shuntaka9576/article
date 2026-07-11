@@ -1,6 +1,5 @@
 ---
 title: "もくもくTiDBチューニング(ぱ〜と1)"
-type: "tech"
 description: ""
 publish: false
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "今週のきづきメモ(技術編)"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: "入居してからがんばります"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: "Cloudflare PagesにApexドメインを設定しようとして嵌った話"
-type: "tech"
 description: "寝たら解決しました!!"
 publish: true
 tags:

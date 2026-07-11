@@ -1,6 +1,5 @@
 ---
 title: "開発生産性可視化まわりのメモ"
-type: "note"
 description: "随時更新します"
 thumbnail: ""
 publish: true

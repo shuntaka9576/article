@@ -1,6 +1,5 @@
 ---
 title: "CloudinaryのFreeプランのクレジットが枯渇した話"
-type: "tech"
 description: ""
 publish: true
 tags:

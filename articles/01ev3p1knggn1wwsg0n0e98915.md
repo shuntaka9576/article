@@ -1,6 +1,5 @@
 ---
 title: "lernaでモノレポで管理したパッケージをnpmに公開する際の注意点"
-type: "tech"
 description: "lernaのコマンド周りで、少し嵌ったのでメモを書きました！"
 publish: true
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "胃腸炎になった話"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

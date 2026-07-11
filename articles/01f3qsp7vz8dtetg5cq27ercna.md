@@ -1,6 +1,5 @@
 ---
 title: "next/linkのpassHref属性がどのような場合に必要か整理、検証してみる"
-type: "tech"
 description: "next/link(Link属性、Linkコンポーネント)でpassHref属性の使い方を調査、検証しました"
 publish: true
 tags:

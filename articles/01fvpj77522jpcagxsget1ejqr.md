@@ -1,6 +1,5 @@
 ---
 title: "SPAにTwitter OAuth 2.0を組み込む際の雑メモ"
-type: "tech"
 description: "SPAにTwitter OAuth2.0を組み込む際の雑メモ"
 thumbnail: ""
 publish: true

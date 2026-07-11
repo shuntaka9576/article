@@ -1,6 +1,5 @@
 ---
 title: "大雪の中スマホを落とした話"
-type: "note"
 description: "猛省します"
 publish: true
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Denoに入門する"
-type: "tech"
 description: ""
 publish: false
 ---

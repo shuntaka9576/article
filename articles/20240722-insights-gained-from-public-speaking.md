@@ -1,6 +1,5 @@
 ---
 title: "2024年上期と下期に向けて雑に"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: "M5Stack Core2 for AWSが届いたのでHello Worldしてみる"
-type: "tech"
 description: "M5Stack Core2 for AWSを動かすための環境を作ります"
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1631953192/blog/01ffj5r74ykepbn4ae7eymdzs1/mojydjbg1zybfp1h03m8.webp"
 publish: true

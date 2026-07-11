@@ -1,6 +1,5 @@
 ---
 title: "[随時更新] 開発生産性Conference参加メモ #開発生産性con_findy"
-type: "note"
 description: "開発生産性Conferenceのメモ"
 thumbnail: ""
 publish: false

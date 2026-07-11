@@ -1,6 +1,5 @@
 ---
 title: "家族間のやりとりでも文章で確認する"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

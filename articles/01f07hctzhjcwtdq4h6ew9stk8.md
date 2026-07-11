@@ -1,6 +1,5 @@
 ---
 title: "Next.jsとサーバレスAPIで自分のブログを作った話"
-type: "tech"
 description: "昨年から様々なSaaSを活用して、自作のブログを改善しており、本記事では裏側の構成について解説する"
 publish: true
 tags:

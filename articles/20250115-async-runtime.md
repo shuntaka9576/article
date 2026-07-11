@@ -1,6 +1,5 @@
 ---
 title: "言語ランタイムと並行実行/並列実行"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

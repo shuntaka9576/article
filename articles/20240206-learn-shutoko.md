@@ -1,6 +1,5 @@
 ---
 title: "高速の覚え方"
-type: "note"
 description: ""
 publish: true
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Headless UIのオプション調査"
-type: "note"
 description: "Headless UIのオプション調査"
 thumbnail: ""
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: "平日夜サウナが快適という話"
-type: "note"
 description: "サウナのお話し"
 thumbnail: ""
 publish: false

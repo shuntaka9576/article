@@ -1,6 +1,5 @@
 ---
 title: "Cloudflare WorkersとClouflare Workers KVを環境毎にデプロイし、ドメインを割り当てる"
-type: "tech"
 description: "wranglerを利用して、Cloudflareサービスを環境切り替えつつデプロイ可能な設定を作ってみました"
 publish: true
 tags:

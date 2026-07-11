@@ -1,6 +1,5 @@
 ---
 title: "Figma備忘録"
-type: "note"
 description: "Figmaの備忘録を随時更新していきます"
 thumbnail: ""
 publish: true

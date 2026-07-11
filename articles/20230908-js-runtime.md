@@ -1,6 +1,5 @@
 ---
 title: "JavaScriptランタイムの違いをまとめる"
-type: "note"
 description: ""
 publish: true
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "DenoFest簡易レポ"
-type: "tech"
 description: "DenoFestに参加しました！"
 publish: true
 tags:

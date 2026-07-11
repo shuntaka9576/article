@@ -1,6 +1,5 @@
 ---
 title: "Rustのコンパイルエラーまとめ"
-type: "note"
 description: "Rust学習中で出会ったコンパイルエラーをまとめます"
 publish: true
 tags:

@@ -1,6 +1,5 @@
 ---
 title: "Apple Developer Programへようこそ(¥12800)"
-type: "tech"
 description: "57時間57分の物語"
 publish: true
 tags:

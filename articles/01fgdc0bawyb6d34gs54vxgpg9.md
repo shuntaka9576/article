@@ -1,6 +1,5 @@
 ---
 title: "[M5Stack Core2] PlatformIOでesp-aws-iotのサンプルsubscribe_publishを動かしてみる"
-type: "tech"
 description: "esp-aws-iotに入門する上で良さそうなミニマム実装をM5Stack Core2上で動かします"
 publish: true
 tags:

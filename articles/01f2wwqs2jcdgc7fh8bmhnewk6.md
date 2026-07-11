@@ -1,6 +1,5 @@
 ---
 title: "App EngineとCloud CDNでstale-while-revalidate可能な環境を構築する"
-type: "tech"
 description: "VercelのISRの代用になるGAE, Cloud CDN構成を試してみました"
 publish: true
 tags:

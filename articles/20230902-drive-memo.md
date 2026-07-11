@@ -1,6 +1,5 @@
 ---
 title: "過失割合メモ"
-type: "note"
 description: ""
 publish: true
 tags:

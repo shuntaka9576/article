@@ -1,6 +1,5 @@
 ---
 title: "NeovimのUIコンポーネントライブラリnui.nvimに関するメモ"
-type: "note"
 description: ""
 publish: false
 ---

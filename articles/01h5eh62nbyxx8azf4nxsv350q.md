@@ -1,6 +1,5 @@
 ---
 title: "リアルテックイベントに参加する際の準備メモ"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

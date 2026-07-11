@@ -1,6 +1,5 @@
 ---
 title: "npmモジュールをモノレポで管理し、煩雑なリリース業務を効率化する"
-type: "tech"
 description: "npmモジュールを効率的に管理するツールやTipsを紹介します"
 publish: true
 tags:

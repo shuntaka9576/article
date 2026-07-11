@@ -1,6 +1,5 @@
 ---
 title: "ziglingsやってみる(随時更新)"
-type: "note"
 description: "ziglingsの翻訳、所感を随時更新でつらつらと書きます"
 thumbnail: ""
 publish: true

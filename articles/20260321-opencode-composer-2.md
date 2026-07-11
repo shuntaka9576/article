@@ -1,6 +1,5 @@
 ---
 title: "OpenCodeでComposer 2をCLIで試す"
-type: "tech"
 description: "小ネタです"
 publish: true
 tags:

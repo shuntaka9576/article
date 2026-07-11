@@ -1,6 +1,5 @@
 ---
 title: "[随時更新] 開発生産性Conferenceの発表資料、その他メモ"
-type: "note"
 description: "随時更新します"
 thumbnail: ""
 publish: true

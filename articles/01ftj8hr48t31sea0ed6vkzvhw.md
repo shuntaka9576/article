@@ -1,6 +1,5 @@
 ---
 title: "tailwindcss入門(随時更新)"
-type: "note"
 description: "tailwindcss入門"
 thumbnail: ""
 publish: true

@@ -1,6 +1,5 @@
 ---
 title: "AWS Cloud Development Kit (AWS CDK) v2の翻訳"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

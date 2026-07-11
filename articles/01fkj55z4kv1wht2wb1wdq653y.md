@@ -1,6 +1,5 @@
 ---
 title: "Programming in Luaをやってみた際に詰まったところ"
-type: "tech"
 description: ""
 publish: false
 ---

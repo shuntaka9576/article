@@ -1,6 +1,5 @@
 ---
 title: "wasmライブラリをlernaでnpmに公開する構成"
-type: "tech"
 description: "wasmパッケージをnpmに公開する際に嵌ったことを書きます"
 publish: true
 tags:

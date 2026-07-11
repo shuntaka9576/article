@@ -1,6 +1,5 @@
 ---
 title: "自作基盤メモ(内部用途のためブログにする場合別記事へ)"
-type: "note"
 description: ""
 thumbnail: ""
 publish: false

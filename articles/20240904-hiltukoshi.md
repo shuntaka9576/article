@@ -1,6 +1,5 @@
 ---
 title: "引っ越しメモ"
-type: "note"
 description: ""
 thumbnail: ""
 publish: true

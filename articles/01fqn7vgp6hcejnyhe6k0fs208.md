@@ -1,10 +1,10 @@
 ---
 title: "2021年の振り返り"
-type: "misc"
 description: "お世話になった皆様、感謝です！本記事では、2021年の活動を軽く振り返ります。"
 thumbnail: "https://res.cloudinary.com/dkerzyk09/image/upload/v1640324333/blog/01fqn7vgp6hcejnyhe6k0fs208/j4og57fak74bzlz2vuqb.png"
 publish: true
 tags:
+  - "misc"
   - "misc/振り返り"
   - "tech/neovim"
   - "tech/iot"

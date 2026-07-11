@@ -6,7 +6,6 @@ thumbnail: ""
 publish: true
 tags:
   - "tech/イベント参加"
-  - "misc/キャリア"
 ---
 
 :::message

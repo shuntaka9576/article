@@ -7,7 +7,6 @@ publish: true
 tags:
   - "tech/rust"
   - "tech/neovim"
-  - "misc/キャリア"
   - "tech/nix"
 ---
 

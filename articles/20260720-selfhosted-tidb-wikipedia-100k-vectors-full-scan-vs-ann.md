@@ -48,7 +48,8 @@ ANNにはインデックスの構築・保持コストがあり、TiDBではベ�
 
 検証環境の全体構成を示します。ミニPC 3台で構成したKubernetesクラスタ上に、TiDB Operatorを使ってTiDB v8.5.7（PD / TiKV / TiDB / TiFlash）を構築しています。GPUは搭載していません。
 
-<!-- Kubernetesクラスタ内の構成図をここに追加 -->
+![検証環境の全体構成図](https://res.cloudinary.com/dkerzyk09/image/upload/v1784334412/blog/2026-07-16-selfhosted-tidb-vector-plamo-embedding-1b-hybrid-search/ah18icf4fmbaexxlrjog.png)
+*前記事と同じ構成。本記事で扱うのは右側のKubernetes部分で、左側のWebシステムは検証の背景*
 
 | ノード | CPU | メモリ | 本記事での主な役割 |
 | --- | --- | --- | --- |

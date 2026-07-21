@@ -1,7 +1,7 @@
 ---
 title: "TiDB Self-Managedで日本語版Wikipedia 4万記事（10万ベクトル）の全件走査とANN検索を比較する"
 description: "セルフホストTiDBに日本語版Wikipedia 4万記事をチャンク化した10万ベクトルを投入し、TiKV/TiFlashの全件走査とHNSWのANN検索を実測比較。全件走査は線形劣化するという予測の答え合わせから、HNSW構築時間・インデックスサイズ・recall@10まで記録します"
-publish: false
+publish: true
 tags:
   - "tech/tidb"
   - "tech/tiflash"

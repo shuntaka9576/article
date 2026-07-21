@@ -51,6 +51,10 @@ https://github.com/shuntaka9576/shuntaka-dev
 
 埋め込み生成のCPU推論とベクトルインデックスのビルドは、どちらもCPU負荷の高いワークロードです。リクエストだけに基づくKubernetesのスケジューラ任せにすると同じノードに同居し得るため、この配置はnodeAffinityで明示的に固定しています(詳細はPLaMoの章で説明します)。
 
+:::message
+本環境は、TiDBが公式に推奨するプロダクション向けの[ハードウェア要件](https://docs.pingcap.com/tidb/stable/hardware-and-software-requirements/)を大きく下回る検証用構成です。本記事のレイテンシやスループットの絶対値は、この環境固有の参考値として見てください。主眼は、同一環境内での各検索経路の相対比較と、セルフホスト構成の実用性確認にあります。
+:::
+
 クラスタへはTailscale経由で到達し、TiDBにはMagicDNS名(`tidb.<tailnet>`)で接続します。以降のコマンドは次の環境変数を前提にします。
 
 ```bash

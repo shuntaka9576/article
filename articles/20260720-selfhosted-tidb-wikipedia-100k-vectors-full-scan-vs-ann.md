@@ -53,13 +53,17 @@ ANNにはインデックスの構築・保持コストがあり、TiDBではベ�
 ![検証環境の全体構成図](https://res.cloudinary.com/dkerzyk09/image/upload/v1784334412/blog/2026-07-16-selfhosted-tidb-vector-plamo-embedding-1b-hybrid-search/ah18icf4fmbaexxlrjog.png)
 *前記事と同じ構成。本記事で扱うのは右側のKubernetes部分で、左側のWebシステムは検証の背景*
 
+:::message
+本構成で利用しているTailscaleのPersonalプランは、個人による非商用利用が対象です。構成図左側のWebシステムは、筆者が個人で非商用運営しているサービスであり、この前提でPersonalプランを利用しています。業務・商用目的で同様の構成を採用する場合はPersonalプランの対象外となるため、用途に合った有料プランを検討してください。最新の適用条件は[Tailscaleの料金ページ](https://tailscale.com/pricing)を確認してください。
+:::
+
 | ノード | CPU | メモリ | 本記事での主な役割 |
 | --- | --- | --- | --- |
-| node1 | Ryzen 7 7730U（8コア / 16スレッド） | 32GB | TiFlash、データ投入・検索ベンチマーク |
+| node1 | Ryzen 7 7730U（8コア / 16スレッド） | 32GB | TiFlash、データ投入スクリプトの実行 |
 | node2 | Ryzen 7 7730U（8コア / 16スレッド） | 32GB | PLaMo推論サービス |
 | node3 | Ryzen 7 7730U（8コア / 16スレッド） | 32GB | PLaMo推論サービス |
 
-Wikipediaデータの投入と検索ベンチマークはnode1上で実行します。TiDBとPLaMo推論サービスにはKubernetes ServiceのClusterIPで接続するため、検証時の通信はクラスタ内で完結します。
+Wikipediaデータの投入スクリプトは、常時稼働しているnode1上で実行します。TiDBとPLaMo推論サービスへの接続は前記事と同様に、TailscaleのMagicDNS名（`tidb.<tailnet>` / `plamo-embedding.<tailnet>`）を使います。node1も手元PCもtailnetに参加しているため、投入（node1上）も確認・計測（手元PC）も同じ接続先で実行できます。
 
 埋め込み生成のCPU推論とHNSWインデックスの構築は、どちらもCPU負荷の高い処理です。両者が同じノード上で競合しないように、TiFlashはnode1、PLaMo推論サービスはnode2とnode3へ配置します。
 
@@ -75,7 +79,7 @@ Wikipediaデータの投入と検索ベンチマークはnode1上で実行しま
 公式要件がコンポーネントごとの専用サーバーを前提とするのに対して、本環境は8コア16スレッド / 32GBのノード3台へ全コンポーネントを同居させ、node2とnode3ではPLaMo推論サービスも動かしています。特にTiFlashは、最低要件の32コア / 64GBに対してノード全体でも8コア16スレッド / 32GB、Podのメモリ上限は8GiBと大きく乖離しています。
 
 :::message
-本環境は、上記のとおり開発・テスト環境向けの最低要件も下回る構成です。本記事のレイテンシの絶対値は、この環境固有の参考値として見てください。主眼は、同一環境内で検索対象を10倍にしたときの、全件走査とANN検索の相対比較にあります。
+本環境は、TiDBが公式に定める[ハードウェア要件](https://docs.pingcap.com/tidb/stable/hardware-and-software-requirements/)のうち、開発・テスト環境向けの最低要件も下回る構成です(特にTiFlashの最低要件は32コア/64GB)。本記事のレイテンシやスループットの絶対値は、この環境固有の参考値として見てください。主眼は、同一環境内での各検索経路の相対比較と、セルフホスト構成の実用性確認にあります。
 :::
 
 ### 比較対象の検索方法
@@ -874,24 +878,18 @@ if __name__ == "__main__":
 
 ### 10万ベクトルを投入する
 
-node1上でTiDBとPLaMO推論サービスのClusterIPを確認し、投入スクリプトの接続先に指定します。
+node1もtailnetに参加しているため、接続先（TiDBとPLaMo推論サービス）は前記事と同様にTailscaleのMagicDNS名で組み立てます。投入スクリプトは`TAILNET`環境変数から接続先を解決します。
 
 ```bash
-kubectl -n tidb-cluster get svc basic-tidb
-kubectl -n plamo-embedding get svc plamo-embedding
-
-export TIDB_HOST=$(kubectl -n tidb-cluster get svc basic-tidb \
-  -o jsonpath='{.spec.clusterIP}')
-export PLAMO_EMBED_ENDPOINT=http://$(kubectl -n plamo-embedding \
-  get svc plamo-embedding -o jsonpath='{.spec.clusterIP}')
+export TAILNET=$(tailscale status --json | jq -r '.MagicDNSSuffix')
 ```
 
 PLaMO推論サービスのヘルスチェックに加えて、実際に埋め込みを生成できることを確認します。レスポンスの`dim`が`2048`であれば、PLaMO-Embedding-1Bによる推論まで正常に動作しています。
 
 ```bash
-curl -fsS "$PLAMO_EMBED_ENDPOINT/healthz" | jq
+curl -fsS "http://plamo-embedding.${TAILNET}/healthz" | jq
 
-curl -fsS -X POST "$PLAMO_EMBED_ENDPOINT/embed" \
+curl -fsS -X POST "http://plamo-embedding.${TAILNET}/embed" \
   -H 'Content-Type: application/json' \
   -d '{"text":"日本の城の石垣の構造","mode":"document"}' \
   | jq '{dim, vector_head: .vector[:5]}'
@@ -900,15 +898,12 @@ curl -fsS -X POST "$PLAMO_EMBED_ENDPOINT/embed" \
 動作を確認できたら、投入を開始します。
 
 ```bash
-nohup uv run ingest_wiki.py jawiki_content-20260712-*.json.bz2 \
-  --embed-endpoint "$PLAMO_EMBED_ENDPOINT" \
-  --tidb-host "$TIDB_HOST" \
-  --database bench_wiki \
-  --table wiki_embedding_chunks \
+nohup uv run ingest_wiki.py jawiki_content-20260712-00000.json.bz2 \
   --target-chunks 100000 \
-  --concurrency 4 \
   > ingest-100k.log 2>&1 &
 ```
+
+接続先のほか、DB名（`bench_wiki`）・テーブル名（`wiki_embedding_chunks`）・同時実行数（4）はスクリプトのデフォルト値をそのまま使います。
 
 `--target-chunks`には投入済みの行も含まれます。ページ単位でINSERTするため、最終的なベクトル数は10万を少し超える可能性があります。これまでの実測値である0.29ベクトル/秒を維持した場合、10万ベクトルの投入には約96時間かかる見込みです。
 
@@ -1098,7 +1093,7 @@ kubectl -n tidb-cluster exec basic-tiflash-0 -c tiflash -- \
 検索に使うクエリベクトルは、ドキュメント投入時とは異なり`mode=query`で生成します。
 
 ```bash
-QVEC=$(curl -s -X POST "$PLAMO_EMBED_ENDPOINT/embed" \
+QVEC=$(curl -s -X POST "http://plamo-embedding.${TAILNET}/embed" \
   -H 'Content-Type: application/json' \
   -d '{"text":"日本の城の石垣の構造","mode":"query"}' \
   | jq -c '.vector')

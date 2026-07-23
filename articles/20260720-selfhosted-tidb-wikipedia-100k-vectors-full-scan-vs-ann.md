@@ -155,7 +155,7 @@ curl -LO "https://dumps.wikimedia.org/other/cirrus_search_index/20260712/index_n
 PLaMo APIは、PLaMo-Embedding-1Bをロードして常駐するFastAPIサーバーです。トークナイザによるチャンク分割を`POST /chunks`、埋め込み生成を`POST /embed`として提供します。`chunking.py`は見出し構造を保ってMarkdownを分割し、タイトル・見出しをメタデータとして各チャンクの先頭へ付与します。
 
 :::message
-同じPLaMO-Embedding-1Bは[Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/models/plamo-embedding-1b/)でも利用できます。本構成のCPU推論では10万ベクトルの生成に約96時間かかるため、データを外部へ送信できない場合や、セルフホスト自体を検証したい場合を除けば、Workers AIを使う方が現実的です。本記事ではセルフホスト環境の性能を確認するため、あえてCPUで生成します。
+同じPLaMo-Embedding-1Bは[Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/models/plamo-embedding-1b/)でも利用できます。本構成のCPU推論では10万ベクトルの生成に約96時間かかるため、データを外部へ送信できない場合や、セルフホスト自体を検証したい場合を除けば、Workers AIを使う方が現実的です。本記事ではセルフホスト環境の性能を確認するため、あえてCPUで生成します。
 :::
 
 :::details PLaMo APIの全文（server.py / chunking.py）
@@ -269,7 +269,7 @@ def healthz() -> dict[str, str]:
 ```
 
 ```python:chunking.py
-"""PLaMO tokenizer に合わせた Markdown document chunking."""
+"""PLaMo tokenizer に合わせた Markdown document chunking."""
 
 from dataclasses import dataclass
 import re
@@ -396,7 +396,7 @@ def chunk_document(
     max_tokens: int = 1024,
     overlap_tokens: int = 128,
 ) -> list[DocumentChunk]:
-    """Markdown section を PLaMO の token 数で window 分割する。"""
+    """Markdown section を PLaMo の token 数で window 分割する。"""
 
     if not 64 <= max_tokens <= 4096:
         raise ValueError("max_tokens must be between 64 and 4096")
@@ -884,7 +884,7 @@ node1もtailnetに参加しているため、接続先（TiDBとPLaMo推論サ�
 export TAILNET=$(tailscale status --json | jq -r '.MagicDNSSuffix')
 ```
 
-PLaMO推論サービスのヘルスチェックに加えて、実際に埋め込みを生成できることを確認します。レスポンスの`dim`が`2048`であれば、PLaMO-Embedding-1Bによる推論まで正常に動作しています。
+PLaMo推論サービスのヘルスチェックに加えて、実際に埋め込みを生成できることを確認します。レスポンスの`dim`が`2048`であれば、PLaMo-Embedding-1Bによる推論まで正常に動作しています。
 
 ```bash
 curl -fsS "http://plamo-embedding.${TAILNET}/healthz" | jq
@@ -909,7 +909,7 @@ nohup uv run ingest_wiki.py jawiki_content-20260712-00000.json.bz2 \
 
 ### その他の投入時の注意事項
 
-PLaMO-Embedding-1Bはnode2とnode3にセルフホストしています。glibc mallocを使った1万ベクトルの投入では、解放済みヒープがOSへ返されず、8GiB制限のPodで最大7.81GiBまで使用しました。
+PLaMo-Embedding-1Bはnode2とnode3にセルフホストしています。glibc mallocを使った1万ベクトルの投入では、解放済みヒープがOSへ返されず、8GiB制限のPodで最大7.81GiBまで使用しました。
 
 そこで、アプリケーションコードは変更せず、Dockerfileでjemallocへ差し替えました。
 
@@ -933,7 +933,7 @@ PLaMO-Embedding-1Bはnode2とnode3にセルフホストしています。glibc m
 | 投入完了後のアイドルRSS | ピーク近くに滞留 | 4.27 / 4.28GiB（ベースラインへ復帰） |
 
 ![PLaMo推論Podのメモリ使用量をglibc mallocとjemallocで比較](https://res.cloudinary.com/dkerzyk09/image/upload/v1784677449/blog/2026-07-20-selfhosted-tidb-wikipedia-100k-vectors-full-scan-vs-ann/uydv3fit3kg82ziobnbb.png)
-*PLaMO推論Podのメモリ使用量の推移。緑・黄がglibc malloc、赤・紫がjemalloc*
+*PLaMo推論Podのメモリ使用量の推移。緑・黄がglibc malloc、赤・紫がjemalloc*
 
 ![glibc mallocとjemallocのRSS推移の違い](https://res.cloudinary.com/dkerzyk09/image/upload/v1784677452/blog/2026-07-20-selfhosted-tidb-wikipedia-100k-vectors-full-scan-vs-ann/pe7ncpf2rwus9xfncmkf.png)
 *実測値をもとに、glibc mallocとjemallocのメモリ推移を模式化した図*

@@ -1099,17 +1099,20 @@ QVEC=$(curl -s -X POST "http://plamo-embedding.${TAILNET}/embed" \
   | jq -c '.vector')
 ```
 
+`QVEC`の中身は`[0.02,-0.11,...]`という2,048要素のJSON配列文字列です。以降の各パターンでは、`mysql -e`のダブルクォート内でシェルが`${QVEC}`を展開し、SQL上はVECTOR型へ変換される文字列リテラルとして渡します。
+
 ### パターン1: TiKVでの全件走査
 
 `READ_FROM_STORAGE`ヒントで、行指向ストレージのTiKVを指定します。
 
-```sql
+```bash
+mysql -h "tidb.${TAILNET}" -P 4000 -u root bench_wiki -e "
 SELECT /*+ READ_FROM_STORAGE(TIKV[c]) */
        page_id, title,
        VEC_COSINE_DISTANCE(embedding, '${QVEC}') AS distance
   FROM wiki_embedding_chunks AS c
  ORDER BY VEC_COSINE_DISTANCE(embedding, '${QVEC}')
- LIMIT 10;
+ LIMIT 10;"
 ```
 
 `EXPLAIN ANALYZE`では、`TopN`と`TableFullScan`が`cop[tikv]`で実行されていることを確認します。
@@ -1118,13 +1121,14 @@ SELECT /*+ READ_FROM_STORAGE(TIKV[c]) */
 
 TiFlashを指定したうえで、`ORDER BY`式の末尾に`+ 0`を付けます。距離の順序は変えずにHNSWインデックスの適用条件から外し、列指向ストレージのTiFlashで全件走査を実行します。
 
-```sql
+```bash
+mysql -h "tidb.${TAILNET}" -P 4000 -u root bench_wiki -e "
 SELECT /*+ READ_FROM_STORAGE(TIFLASH[c]) */
        page_id, title,
        VEC_COSINE_DISTANCE(embedding, '${QVEC}') AS distance
   FROM wiki_embedding_chunks AS c
  ORDER BY VEC_COSINE_DISTANCE(embedding, '${QVEC}') + 0
- LIMIT 10;
+ LIMIT 10;"
 ```
 
 `EXPLAIN ANALYZE`では`mpp[tiflash]`で実行され、`annIndex`が表示されないことを確認します。この結果を、ANNの再現率を計算する際の正解集合として使用します。
@@ -1133,13 +1137,14 @@ SELECT /*+ READ_FROM_STORAGE(TIFLASH[c]) */
 
 パターン2から`+ 0`を外すと、TiFlashのHNSWインデックスが利用されます。
 
-```sql
+```bash
+mysql -h "tidb.${TAILNET}" -P 4000 -u root bench_wiki -e "
 SELECT /*+ READ_FROM_STORAGE(TIFLASH[c]) */
        page_id, title,
        VEC_COSINE_DISTANCE(embedding, '${QVEC}') AS distance
   FROM wiki_embedding_chunks AS c
  ORDER BY VEC_COSINE_DISTANCE(embedding, '${QVEC}')
- LIMIT 10;
+ LIMIT 10;"
 ```
 
 HNSWインデックスが使われている場合、`EXPLAIN ANALYZE`の`TableFullScan`に`annIndex:COSINE(..., limit:10)`が表示されます。インデックスを利用していてもexecutor名は`TableFullScan`のままである点に注意してください。

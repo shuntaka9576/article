@@ -925,6 +925,12 @@ PLaMo-Embedding-1Bはnode2とnode3にセルフホストしています。glibc m
 
 `LD_PRELOAD`でPyTorchなどが使うメモリアロケータを差し替え、未使用ページをバックグラウンドでpurgeします。`dirty_decay_ms:10000`は、dirty pageを約10秒の減衰期間でpurgeまたは再利用する設定です。詳細は[jemallocの公式ドキュメント](https://jemalloc.net/jemalloc.3.html)を参照してください。
 
+![LD_PRELOADでmalloc系関数がjemallocへ差し替わる仕組みの図](https://res.cloudinary.com/dkerzyk09/image/upload/v1784784145/blog/2026-07-20-selfhosted-tidb-wikipedia-100k-vectors-full-scan-vs-ann/wtsax7lyguejmtptyz6j.png)
+*動的リンカのシンボル解決は先にロードされた側が勝つため、`LD_PRELOAD`したlibjemalloc.so.2がlibc.so.6のmallocを覆い隠し、CPythonやPyTorchのmalloc / free / posix_memalign呼び出しがすべてjemallocへ届く*
+
+![glibc mallocとjemallocで解放済みヒープページの扱いがどう違うかの模式図](https://res.cloudinary.com/dkerzyk09/image/upload/v1784784095/blog/2026-07-20-selfhosted-tidb-wikipedia-100k-vectors-full-scan-vs-ann/isbpzcz4rztlsxt5lgtr.png)
+*glibc mallocは解放済みページが断片化でプロセス内に滞留しRSSが積み上がるのに対し、jemallocは解放済み領域を約10秒のdirty decayでOSへ返す*
+
 | 指標 | glibc malloc（1万ベクトル投入） | jemalloc（10万ベクトル投入） |
 | --- | ---: | ---: |
 | モデルロード後のベースライン | 5.45〜5.72GiB | 約4.3GiB |

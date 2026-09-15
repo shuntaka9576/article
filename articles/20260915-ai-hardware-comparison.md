@@ -15,50 +15,52 @@ AI用途で気になるメモリ容量・帯域・コア数・価格を、Macか
 
 Mac・Spark・Halo・EVOは本体1台、ほかはGPU 1基の仕様です。コア数はApple GPU、AMD CUと明記したもの以外はCUDAコア数です。HaloとEVOは、発表済みの最上位構成を各1台載せています。
 
-| 発売・提供年 | 製品・構成 | メモリ容量 | 帯域（GB/s） | コア数 | FP32（TFLOPS）[^flops] | 米国参考価格 → 円換算 | 国内新品（税込） | 国内中古例（税込）[^used] | Runpod / 時間 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2026予定 | Mac Studio M5 Ultra・512GB[^mac512] | 512GB・共有 | 1,200 | Apple GPU 80 | 未確認 | 予想$17,700 → 約272.6万円 | 予想約314.6万円 | — | — |
-| 2026予定 | Mac Studio M5 Ultra・256GB[^ssd] | 256GB・共有 | 1,200 | Apple GPU 64 | 未確認 | $9,999 → 約154.0万円 | 1,759,800円 | — | — |
-| 2026予定 | AMD Ryzen AI Halo・PRO 495／192GB[^amd] | 192GB・共有 | 最大273※ | AMD CU 40 | 約30.7※ | 未公表 | 未公表 | — | — |
-| 2026予定 | GMKtec EVO-X5 Pro・192GB[^amd] | 192GB・共有 | 273 | AMD CU 40 | 約30.7※ | 未公表 | 未公表 | — | — |
-| 2025 | DGX Spark・GB10[^ssd] | 128GB・共有 | 273 | CUDA 6,144 | 未確認 | $4,699 → 約72.4万円 | 販売店による | — | — |
-| 2025 | GeForce RTX 5090 | 32GB GDDR7 | 1,792 | 21,760 | 約104.9 | $1,999 → 約30.8万円 | 販売店による | — | $0.99（約152円） |
-| 2025 | GeForce RTX 5080 | 16GB GDDR7 | 960 | 10,752 | 約56.3 | $999 → 約15.4万円 | 販売店による | — | — |
-| 2025 | GeForce RTX 5070 Ti | 16GB GDDR7 | 896 | 8,960 | 約43.9 | $749 → 約11.5万円 | 販売店による | — | — |
-| 2025 | GeForce RTX 5070 | 12GB GDDR7 | 672 | 6,144 | 約30.8 | $549 → 約8.5万円 | 販売店による | [124,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=363858) | — |
-| 2025 | GeForce RTX 5060 Ti・16GB | 16GB GDDR7 | 448 | 4,608 | 約23.7 | $429 → 約6.6万円 | 販売店による | — | — |
-| 2025 | GeForce RTX 5060 Ti・8GB | 8GB GDDR7 | 448 | 4,608 | 約23.7 | $379 → 約5.8万円 | 販売店による | — | — |
-| 2025 | GeForce RTX 5060 | 8GB GDDR7 | 448 | 3,840 | 約19.2 | $299 → 約4.6万円 | 販売店による | [109,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=377147) | — |
-| 2025 | GeForce RTX 5050 | 8GB GDDR6 | 320 | 2,560 | 約13.2 | $249 → 約3.8万円 | 販売店による | — | — |
-| 2025 | B300 | 288GB HBM3e | 最大8,000 | 20,480※ | 75 | 非公表・見積もり | 構成別見積もり | — | $7.89（約1,215円） |
-| 2025※ | B200 | 180GB HBM3e | 最大8,000 | 18,944 | 75 | 非公表・見積もり | 構成別見積もり | — | $6.79（約1,046円） |
-| 2025 | RTX PRO 6000 Blackwell・Workstation | 96GB GDDR7 ECC | 1,792 | 24,064 | 125 | 非公表・見積もり | 販売店による | — | — |
-| 2025 | RTX PRO 6000 Blackwell・Server | 96GB GDDR7 ECC | 1,597 | 24,064 | 120 | 非公表・見積もり | 構成別見積もり | — | $2.09（約322円） |
-| 2025 | RTX PRO 5000 Blackwell・72GB | 72GB GDDR7 ECC | 1,344 | 14,080 | 65 | 非公表・見積もり | 販売店による | — | — |
-| 2025 | RTX PRO 5000 Blackwell・48GB | 48GB GDDR7 ECC | 1,344 | 14,080 | 65 | 非公表・見積もり | 販売店による | — | — |
-| 2025 | RTX PRO 4500 Blackwell・Workstation | 32GB GDDR7 ECC | 896 | 10,496 | 51 | 非公表・見積もり | 販売店による | — | — |
-| 2025 | RTX PRO 4000 Blackwell | 24GB GDDR7 ECC | 672 | 8,960 | 40 | 非公表・見積もり | 販売店による | — | — |
-| 2025 | RTX PRO 2000 Blackwell | 16GB GDDR7 ECC | 288 | 4,352 | 17 | 非公表・見積もり | 販売店による | — | — |
-| 2024 | GeForce RTX 4080 SUPER | 16GB GDDR6X | 736 | 10,240 | 約52.2 | $999 → 約15.4万円 | 販売店による | — | — |
-| 2024 | GeForce RTX 4070 Ti SUPER | 16GB GDDR6X | 672 | 8,448 | 約44.1 | $799 → 約12.3万円 | 販売店による | — | — |
-| 2024 | GeForce RTX 4070 SUPER | 12GB GDDR6X | 504 | 7,168 | 約35.6 | $599 → 約9.2万円 | 販売店による | — | — |
-| 2024 | H200 SXM | 141GB HBM3e | 4,800 | 16,896 | 67 | 非公表・見積もり | 構成別見積もり | — | $4.59（約707円） |
-| 2023 | GeForce RTX 4060 Ti・16GB | 16GB GDDR6 | 288 | 4,352 | 約22.1 | $499 → 約7.7万円 | 販売店による | — | — |
-| 2023 | GeForce RTX 4060 Ti・8GB | 8GB GDDR6 | 288 | 4,352 | 約22.1 | $399 → 約6.1万円 | 販売店による | [51,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=336279) | — |
-| 2023 | GeForce RTX 4060 | 8GB GDDR6 | 272 | 3,072 | 約15.1 | $299 → 約4.6万円 | 販売店による | [47,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=338309) | — |
-| 2022 | GeForce RTX 4090 | 24GB GDDR6X | 1,008 | 16,384 | 約82.6 | $1,599 → 約24.6万円 | 販売店による | — | $0.74（約114円） |
-| 2022 | RTX 6000 Ada | 48GB GDDR6 ECC | 960 | 18,176 | 91.1 | 非公表・見積もり | 販売店による | — | $0.84（約129円） |
-| 2022 | H100 SXM | 80GB HBM3 | 3,350 | 16,896 | 67 | 非公表・見積もり | 構成別見積もり | — | $3.49（約537円） |
-| 2020 | GeForce RTX 3090 | 24GB GDDR6X | 936 | 10,496 | 約35.7 | $1,499 → 約23.1万円 | 販売店による | — | $0.50（約77円） |
-| 2020 | GeForce RTX 3080・10GB | 10GB GDDR6X | 760 | 8,704 | 約29.8 | $699 → 約10.8万円 | 販売店による | — | — |
-| 2020 | GeForce RTX 3070 | 8GB GDDR6 | 448 | 5,888 | 約20.4 | $499 → 約7.7万円 | 販売店による | [39,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=292603) | — |
-| 2020 | GeForce RTX 3060 Ti・GDDR6 | 8GB GDDR6 | 448 | 4,864 | 約16.2 | $399 → 約6.1万円 | 販売店による | [37,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=336335) | — |
-| 2020 | RTX A6000 | 48GB GDDR6 ECC | 768 | 10,752 | 38.7 | 非公表・見積もり | 販売店による | — | $0.53（約82円） |
+| 発売・提供年 | 製品・構成 | 世代（アーキテクチャ）[^arch] | メモリ容量 | 帯域（GB/s） | コア数 | FP32（TFLOPS）[^flops] | 米国参考価格 → 円換算 | 国内新品（税込） | 国内中古例（税込）[^used] | Runpod / 時間 |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2026予定 | Mac Studio M5 Ultra・512GB[^mac512] | M5 | 512GB・共有 | 1,200 | Apple GPU 80 | 未確認 | 予想$17,700 → 約272.6万円 | 予想約314.6万円 | — | — |
+| 2026予定 | Mac Studio M5 Ultra・256GB[^ssd] | M5 | 256GB・共有 | 1,200 | Apple GPU 64 | 未確認 | $9,999 → 約154.0万円 | 1,759,800円 | — | — |
+| 2026予定 | AMD Ryzen AI Halo・PRO 495／192GB[^amd] | RDNA 3.5 | 192GB・共有 | 最大273※ | AMD CU 40 | 約30.7※ | 未公表 | 未公表 | — | — |
+| 2026予定 | GMKtec EVO-X5 Pro・192GB[^amd] | RDNA 3.5 | 192GB・共有 | 273 | AMD CU 40 | 約30.7※ | 未公表 | 未公表 | — | — |
+| 2025 | DGX Spark・GB10[^ssd] | Blackwell | 128GB・共有 | 273 | CUDA 6,144 | 未確認 | $4,699 → 約72.4万円 | 販売店による | — | — |
+| 2025 | GeForce RTX 5090 | Blackwell | 32GB GDDR7 | 1,792 | 21,760 | 約104.9 | $1,999 → 約30.8万円 | 販売店による | — | $0.99（約152円） |
+| 2025 | GeForce RTX 5080 | Blackwell | 16GB GDDR7 | 960 | 10,752 | 約56.3 | $999 → 約15.4万円 | 販売店による | — | — |
+| 2025 | GeForce RTX 5070 Ti | Blackwell | 16GB GDDR7 | 896 | 8,960 | 約43.9 | $749 → 約11.5万円 | 販売店による | — | — |
+| 2025 | GeForce RTX 5070 | Blackwell | 12GB GDDR7 | 672 | 6,144 | 約30.8 | $549 → 約8.5万円 | 販売店による | [124,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=363858) | — |
+| 2025 | GeForce RTX 5060 Ti・16GB | Blackwell | 16GB GDDR7 | 448 | 4,608 | 約23.7 | $429 → 約6.6万円 | 販売店による | — | — |
+| 2025 | GeForce RTX 5060 Ti・8GB | Blackwell | 8GB GDDR7 | 448 | 4,608 | 約23.7 | $379 → 約5.8万円 | 販売店による | — | — |
+| 2025 | GeForce RTX 5060 | Blackwell | 8GB GDDR7 | 448 | 3,840 | 約19.2 | $299 → 約4.6万円 | 販売店による | [109,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=377147) | — |
+| 2025 | GeForce RTX 5050 | Blackwell | 8GB GDDR6 | 320 | 2,560 | 約13.2 | $249 → 約3.8万円 | 販売店による | — | — |
+| 2025 | B300 | Blackwell Ultra | 288GB HBM3e | 最大8,000 | 20,480※ | 75 | 非公表・見積もり | 構成別見積もり | — | $7.89（約1,215円） |
+| 2025※ | B200 | Blackwell | 180GB HBM3e | 最大8,000 | 18,944 | 75 | 非公表・見積もり | 構成別見積もり | — | $6.79（約1,046円） |
+| 2025 | RTX PRO 6000 Blackwell・Workstation | Blackwell | 96GB GDDR7 ECC | 1,792 | 24,064 | 125 | 非公表・見積もり | 販売店による | — | — |
+| 2025 | RTX PRO 6000 Blackwell・Server | Blackwell | 96GB GDDR7 ECC | 1,597 | 24,064 | 120 | 非公表・見積もり | 構成別見積もり | — | $2.09（約322円） |
+| 2025 | RTX PRO 5000 Blackwell・72GB | Blackwell | 72GB GDDR7 ECC | 1,344 | 14,080 | 65 | 非公表・見積もり | 販売店による | — | — |
+| 2025 | RTX PRO 5000 Blackwell・48GB | Blackwell | 48GB GDDR7 ECC | 1,344 | 14,080 | 65 | 非公表・見積もり | 販売店による | — | — |
+| 2025 | RTX PRO 4500 Blackwell・Workstation | Blackwell | 32GB GDDR7 ECC | 896 | 10,496 | 51 | 非公表・見積もり | 販売店による | — | — |
+| 2025 | RTX PRO 4000 Blackwell | Blackwell | 24GB GDDR7 ECC | 672 | 8,960 | 40 | 非公表・見積もり | 販売店による | — | — |
+| 2025 | RTX PRO 2000 Blackwell | Blackwell | 16GB GDDR7 ECC | 288 | 4,352 | 17 | 非公表・見積もり | 販売店による | — | — |
+| 2024 | GeForce RTX 4080 SUPER | Ada Lovelace | 16GB GDDR6X | 736 | 10,240 | 約52.2 | $999 → 約15.4万円 | 販売店による | — | — |
+| 2024 | GeForce RTX 4070 Ti SUPER | Ada Lovelace | 16GB GDDR6X | 672 | 8,448 | 約44.1 | $799 → 約12.3万円 | 販売店による | — | — |
+| 2024 | GeForce RTX 4070 SUPER | Ada Lovelace | 12GB GDDR6X | 504 | 7,168 | 約35.6 | $599 → 約9.2万円 | 販売店による | — | — |
+| 2024 | H200 SXM | Hopper | 141GB HBM3e | 4,800 | 16,896 | 67 | 非公表・見積もり | 構成別見積もり | — | $4.59（約707円） |
+| 2023 | GeForce RTX 4060 Ti・16GB | Ada Lovelace | 16GB GDDR6 | 288 | 4,352 | 約22.1 | $499 → 約7.7万円 | 販売店による | — | — |
+| 2023 | GeForce RTX 4060 Ti・8GB | Ada Lovelace | 8GB GDDR6 | 288 | 4,352 | 約22.1 | $399 → 約6.1万円 | 販売店による | [51,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=336279) | — |
+| 2023 | GeForce RTX 4060 | Ada Lovelace | 8GB GDDR6 | 272 | 3,072 | 約15.1 | $299 → 約4.6万円 | 販売店による | [47,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=338309) | — |
+| 2022 | GeForce RTX 4090 | Ada Lovelace | 24GB GDDR6X | 1,008 | 16,384 | 約82.6 | $1,599 → 約24.6万円 | 販売店による | — | $0.74（約114円） |
+| 2022 | RTX 6000 Ada | Ada Lovelace | 48GB GDDR6 ECC | 960 | 18,176 | 91.1 | 非公表・見積もり | 販売店による | — | $0.84（約129円） |
+| 2022 | H100 SXM | Hopper | 80GB HBM3 | 3,350 | 16,896 | 67 | 非公表・見積もり | 構成別見積もり | — | $3.49（約537円） |
+| 2020 | GeForce RTX 3090 | Ampere | 24GB GDDR6X | 936 | 10,496 | 約35.7 | $1,499 → 約23.1万円 | 販売店による | — | $0.50（約77円） |
+| 2020 | GeForce RTX 3080・10GB | Ampere | 10GB GDDR6X | 760 | 8,704 | 約29.8 | $699 → 約10.8万円 | 販売店による | — | — |
+| 2020 | GeForce RTX 3070 | Ampere | 8GB GDDR6 | 448 | 5,888 | 約20.4 | $499 → 約7.7万円 | 販売店による | [39,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=292603) | — |
+| 2020 | GeForce RTX 3060 Ti・GDDR6 | Ampere | 8GB GDDR6 | 448 | 4,864 | 約16.2 | $399 → 約6.1万円 | 販売店による | [37,980円](https://www.janpara.co.jp/sale/search/detail/?ITMCODE=336335) | — |
+| 2020 | RTX A6000 | Ampere | 48GB GDDR6 ECC | 768 | 10,752 | 38.7 | 非公表・見積もり | 販売店による | — | $0.53（約82円） |
 
 - **Apple GPUコア・AMD CU・CUDAコアは個数で性能比較できません。** 共有メモリはOS・CPUとも共用します。
 - GeForceの価格は**発売時の米国参考価格**で、現在の実売価格ではありません。Mac・Sparkは確認時の構成価格、512GB Macは予想です。国内販売店による値付けとは分けています。
 - 円換算は**1ドル＝154.01円**（2026年9月11日終値）。税・送料は含みません。[為替データ](https://www.investing.com/currencies/usd-jpy-historical-data)
 - Runpodは**Pods / Secure Cloud・GPU 1基の時間単価**。ストレージ料金は別、`—`は今回の料金表で掲載価格を確認していない製品です。[Runpod公式料金](https://www.runpod.io/pricing)
+
+[^arch]: NVIDIA・AMDはGPUのアーキテクチャ名、Appleはチップの世代名を記載。同じ世代でも演算性能や対応機能は製品ごとに異なります。[GeForceの世代比較](https://www.nvidia.com/en-ph/geforce/graphics-cards/compare/)・[B200／B300の世代](https://www.nvidia.com/en-au/data-center/hgx/)・[AMDのRDNA 3.5採用](https://www.amd.com/en/blogs/2026/amd-powers-next-generation-agent-computers-with-new-ryzen-ai-hal.html)を参照。
 
 [^flops]: **GPUのFP32理論性能**。1 TFLOPSは1秒あたり1兆回の浮動小数点演算で、FMAは2演算と数えます。CPU・NPU・Tensorコアの性能は加算しません。GeForceの「約」は公式比較表のCUDAコア数×公開ブーストクロック（GHz）×2÷1,000で算出。クロックが小数第2位に丸められているため、ほかの公称値と僅差が出ます。AMDの「※」はチップ仕様からの計算値。Mac・Sparkは確認した公式資料にFP32値がなく「未確認」としています。
 [^used]: **じゃんぱらの中古販売例を2026年9月15日に確認**。送料別、ポイント・クーポン適用前。GPU単体・同じVRAM容量の在庫から1個体を採用した価格で、市場全体の最安値・中央値・落札相場ではありません。新品・未使用品、ジャンク、ファン異常や腐食などの記載がある個体は除外。`—`は今回、条件を満たす販売価格を確認できていないものです。型番・個体番号・状態は補足に記載しています。
@@ -176,7 +178,20 @@ H100の提供開始は[2022年](https://nvidianews.nvidia.com/news/nvidia-hopper
 - **RunPodのH200 2枚**：VRAM合計282GB。表の単価を2枚分にすると **$9.18/時 → 約1,414円/時**。
 - **RunPodのB300 1枚**：VRAM288GB。**$7.89/時 → 約1,215円/時**で、月100時間なら約12.2万円です。[RunPod料金](https://www.runpod.io/pricing)
 
-この料金比較はメモリ容量を近づけた例で、同じモデル・設定での動作や速度を比較したものではありません。H200は1枚あたり4,800GB/s、B300は最大8,000GB/sと、Sparkの273GB/sより帯域も大きくなります。個人で長時間使うならSparkの購入費が気になりますが、クラウドで処理時間を短縮できれば、そのぶん借りる時間も減ります。「帯域が多すぎて割高」とは決められず、実際の生成速度と稼働時間まで含めて比べたいところです。
+この料金比較はメモリ容量を近づけた例で、同じモデル・設定での動作や速度を比較したものではありません。ここで面白いのが、H200とSparkの容量・帯域のバランスです。容量は141GBと128GBで近いのに、帯域は4,800GB/sと273GB/sで約18倍も違います。[H200仕様](https://www.nvidia.com/en-gb/data-center/h200/)・[Spark仕様](https://docs.nvidia.com/dgx/dgx-spark/hardware.html)
+
+LLMは重みがメモリに収まったあとも、それを繰り返し読み出して計算します。特に1人分の応答を逐次生成する場面では、演算器の性能より重みを読み出す速度がボトルネックになりやすくなります。つまり、**1人で使う場合にも、大きなメモリ帯域には意味があります**。[NVIDIAの推論性能解説](https://developer-blogs.nvidia.com/wp-content/uploads/2024/08/S62797-LLM-Inference-Sizing_-Benchmarking-End-to-End-Inference-Systems.pdf)
+
+たとえば、1トークン生成するたびに70GBの重みをメモリから読み出すdenseモデルを仮定すると、読み出しだけにかかる時間は「データ量 ÷ 帯域」で見積もれます。ここではH200 1枚とSpark 1台で比べます。
+
+- **H200：70GB ÷ 4,800GB/s ≒ 15ミリ秒**
+- **Spark：70GB ÷ 273GB/s ≒ 256ミリ秒**
+
+これは公称帯域を使い切れると仮定し、演算やKVキャッシュへのアクセスなどを無視した理論値で、実測の生成速度ではありません。それでも、モデルが収まる容量だけでは使い勝手を比べられない理由が見えてきます。なお、上のDeepSeekのように一部の専門家ネットワークを選んで動かすMoEでは、毎回すべての重みを使うわけではないため、モデル全体のサイズをこの式に入れることはできません。
+
+製品の経緯を見ると、H200はH100と同じHopper世代で、メモリを強化したGPUです。H100 SXMの80GB・3,350GB/sから、141GB・4,800GB/sへ。**H100比では容量が約1.8倍、帯域が約1.4倍と、実は容量のほうを大きく増やしています**。[NVIDIA H200](https://www.nvidia.com/en-gb/data-center/h200/)
+
+個人で長時間使うならSparkの購入費が気になりますが、クラウドで処理時間を短縮できれば、そのぶん借りる時間も減ります。必要な容量に加えて、どのくらいの生成速度を求めるか、その速さにいくら払うかまで含めて比べたいところです。
 
 LLM推論がCUDAなしでも動くのは、モデルの計算に必要な行列積・正規化・活性化関数などを、ほかの計算基盤でも実装できるためです。学習済みの重みは数値データであり、それ自体がCUDAのプログラムというわけではありません。CUDAは、その計算をNVIDIA GPU上で実行するための計算基盤です。AMDやAppleのGPUにも、こうした計算を並列に処理する演算器があります。[CUDAの説明](https://developer.nvidia.com/cuda)
 

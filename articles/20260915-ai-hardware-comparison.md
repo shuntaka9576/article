@@ -1,7 +1,7 @@
 ---
 title: "AI関連のハードウェアの数字をまとめてみた"
 description: "Mac Studio Ultra、DGX Spark、GeForce RTX 50〜30シリーズ、RTX PRO、H100〜B300を一覧比較。発売年、メモリ容量・帯域、コア数、ドル・円価格、Runpod料金と通信速度を並べます"
-publish: true
+publish: false
 tags:
   - "tech/llm"
   - "tech/nvidia"
